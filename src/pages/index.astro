@@ -33,14 +33,6 @@ const dogImageUrl = response?.message ?? imageError;
 </html>
 
 <script>
-	const button = document.getElementById("cat-image-button");
-	const imageEl = document.getElementById("cat-image") as HTMLImageElement;
-
-	if (button && imageEl) {
-		button.addEventListener("click", async () => {
-			const res = await fetch("https://api.thecatapi.com/v1/images/search");
-			const data = await res.json();
-			imageEl.src = data[0].url;
-		});
-	}
+	import { setupCatFactButton } from "./cat";
+	setupCatFactButton();
 </script>
